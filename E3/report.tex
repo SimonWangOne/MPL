@@ -1,0 +1,101 @@
+\documentclass[utf8]{article}
+\input{macros.tex}
+
+%\cpic{<尺寸>}{<文件名>}}用于生成居中的图片。
+\newcommand{\cpic}[2]{
+\begin{center}
+\includegraphics[scale=#1]{#2}
+\end{center}
+}
+
+%\cpicn{<尺寸>}{<文件名>}{<注释>}用于生成居中且带有注释的图片，其label为图片名。
+\newcommand{\cpicn}[3]
+{
+\begin{figure}[h!]
+\cpic{#1}{#2}
+\caption{#3\label{#2}}
+\end{figure}
+}
+\title{实验CC1+A 热辐射设计性实验}
+\begin{document}
+\maketitle  
+	\begin{tabular}{|p{8em}|p{8em}|p{8em}|p{10em}|}
+		\hline
+		\large{实验方案} &\large{实验记录}  &\large{分析讨论} &\large{总成绩}\\
+		\hline
+		        &          &          &  \\
+	    \hline
+	\hline 
+	年级、专业： &17级物理学 &组号：& 7+A \\
+	\hline
+	姓名：& 徐昊霆、谢梓冰 &学号：&17353071、17353070  \\
+	\hline
+	日期：& 2019.6.2 &教师签名： &  \\
+    \hline	
+        \end{tabular}
+
+\newpage
+\tableofcontents
+\section{实验原理与方案}
+
+\subsection{实验目的}
+\par 
+1.传感器辐射强度(辐射通量、或能流密度)校正，\textbf{获得热辐射传感器输出信号与当地热辐射强度的定量关系式。}
+\par
+2.比较带透镜的热辐射传感器(SMTIR9902sil)与不带透镜的传感器(SMTIR9902)之间的结果，\textbf{获得带透镜的热辐射传感器输出信号与辐射表面温度的定量关系}，分析原因并给出其适用范围和使用规范。
+\par 
+3.校正辐射体表面温度(具体校正什么下面会说明)。
+\par
+4.选做：测量不同物体的防辐射能力。
+\subsection{仪器用具}
+		\begin{tabular}{c|c|c|c}
+			\hline
+			编号 & 仪器名称 &数量& 主要参数（型号，测量范围，精度） \\
+			\hline 
+			1 &  黑体辐射与红外测量装置 &1 &DHRH-B;含标尺(60cm)，位移导轨\\
+			& & & 辐射器(三种辐射面)、热辐射传感器（SMTIR9902）\\
+			2 & 数字多用表&2 & RIGOL DM3058E \\
+			3 & 程序控制电源 & 1 &RIGOL DP832 \\
+			4 & 计算机& 1 & 以安装LabView和控温软件，电脑进入win7-64位系统 \\
+			5&透明塑料包装膜 &1& 带透镜传感器的外包装 \\
+			6&螺旋测微仪&1& 精度为0.001\\
+			7&游标卡尺&1& 50分度，内部含有润滑油充分润滑\\
+			8&米黄色纸张&1& B5，购买于淘宝\\
+			9&剪刀&1& 国产，放置于讲台的笔筒中\\
+			\hline
+
+\end{tabular}
+
+
+                
+\newpage
+\section{实验步骤与记录}
+\begin{tabular}{|p{9em}|p{9em}|p{9em}|p{9em}|}
+	\hline 
+	专业：     &Physics       &年级：      & 17     \\
+	\hline
+	姓名：& 徐昊霆 &学号：&17353071  \\
+	\hline
+	室温：&                    &实验地点 & 教学楼A512 \\
+	\hline	
+	学生签名： & & 评分： & \\
+	\hline
+	日期： & 2019.5 & 教师签名：&  \\
+	\hline
+\end{tabular}
+
+\newpage
+\section{分析与讨论}
+\begin{tabular}{|p{9em}|p{9em}|p{9em}|p{9em}|}
+	\hline 
+	专业：     &Physics       &年级：      & 17     \\
+	\hline
+	姓名：& 徐昊霆、谢梓冰 &学号：&17353071、17353070  \\
+	\hline
+	日期&     2019.5.31               & &  \\
+	\hline	
+	评分 & & 教师签名 & \\
+	\hline
+\end{tabular}
+
+\end{document}
