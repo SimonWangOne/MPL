@@ -18,9 +18,10 @@
 }
 \title{实验E3 材料真空兼容性测试和等离子特性研究}
 \begin{document}
-\maketitle  
-	\begin{tabular}{|p{8em}|p{8em}|p{8em}|p{10em}|}
-		\hline
+\maketitle
+
+\begin{tabular}{|p{8em}|p{8em}|p{8em}|p{6em}|}
+\hline
 		\large{实验方案} &\large{实验记录}  &\large{分析讨论} &\large{总成绩}\\
 		\hline
 		        &          &          &  \\
@@ -65,14 +66,20 @@
 
 6. 深入探讨四极质谱仪工作原理。
 \subsection{仪器用具}
+上海宜准公司 VQP01真空平台，该装置由如下四部分构成。
+
 \begin{tabular}{c|c|c|c}
 	\hline
         编号 & 仪器名称 &数量& 主要参数（型号，测量范围，精度） \\
 	\hline 
-	1 &  上海宜准公司  真空平台 &1 & VQP01\\
+	1 &  放电管&1 & 用于实现空气(或氩气)的击穿和放电\\
+        2 &  放电电源&1 &提供 0-1000V 的可调电压输出\\
+        3 &  空气送气与调节系统&1& 包含气压测量装置\\
+        4 &  击穿电压测量系统 &1&\\
 	\hline
-
 \end{tabular}
+
+此外,为了保证高压电极处安全问题,特对高压电源实施继电器控制,只有真空计打开并且压强低于$1000\SIPa$ 时,高压电源才导通。
 \subsection{实验安全注意事项}
 
 1. 操作前请检查真空腔体是否密封,检查高压电源开关、分子泵电源开关是否断开,以及应急按钮是否断开。
@@ -84,19 +91,25 @@
 4. 若实验中用到四极质谱仪,开启四极质谱仪时保证真空压强低于 $5.0\times 10^{-2}\SIPa$。
 
 \subsection{实验原理}
-
-真空的获得和测量:在给定空间内,气体压强低于一个大气压的气体状态,称之为真空。真空的获得就是人们常说的“抽真空”,即利用各种真空泵将被抽容器中的气体抽出,使该空间的压强低于一个大气压。真空测量是指用特定的仪器和装置,对某一特定空间内真空高低的测定,这种仪器或装置称为真空计(仪器、规管)。
-
-固体对气体的吸附及气体的脱附:气体吸附就是固体表面捕获气体分子的现象,吸附分为物理吸附和化学吸附。其中物理吸附没有选择性,任何气体在固体表面均可发生,主要靠分子间的相互吸引力引起的。物理吸附的气体容易发生脱附,而且这种吸附只在低温下有效;化学吸附则发生在较高的温度下,与化学反应相似,气体不易脱附,但只有当气体和固体表面原子接触生成化合物时才能产生吸附作用。气体的脱附是气体吸附的逆过程。通常把吸附在固体表面的气体分子从固体表面被释放出来的过程叫做气体的脱附。
-
-气体放电、等离子体和帕邢定律:气体放电的基本过程是利用外(电)场加速电子使
+\subsubsection{真空的获得和测量}
+在给定空间内,气体压强低于一个大气压的气体状态,称之为真空。真空的获得就是人们常说的“抽真空”,即利用各种真空泵将被抽容器中的气体抽出,使该空间的压强低于一个大气压。真空测量是指用特定的仪器和装置,对某一特定空间内真空高低的测定,这种仪器或装置称为真空计(仪器、规管)。
+\subsubsection{固体对气体的吸附及气体的脱附}
+气体吸附就是固体表面捕获气体分子的现象,吸附分为物理吸附和化学吸附。其中物理吸附没有选择性,任何气体在固体表面均可发生,主要靠分子间的相互吸引力引起的。物理吸附的气体容易发生脱附,而且这种吸附只在低温下有效;化学吸附则发生在较高的温度下,与化学反应相似,气体不易脱附,但只有当气体和固体表面原子接触生成化合物时才能产生吸附作用。气体的脱附是气体吸附的逆过程。通常把吸附在固体表面的气体分子从固体表面被释放出来的过程叫做气体的脱附。
+\subsubsection{气体放电、等离子体和帕邢定律}
+气体放电的基本过程是利用外(电)场加速电子使
 之碰撞中性原子(分子)来电离气体。等离子体由离子、电子以及未电离的中性原子(分子)
-的集合组成,整体呈中性的物质状态。气体放电是产生等离子体的一种常见形式。帕邢定律是表征均匀电场气体间隙击穿电压、间隙距离和气压间关系的定律。
+的集合组成,整体呈中性的物质状态。气体放电是产生等离子体的一种常见形式。帕邢定律是表征均匀电场气体间隙击穿电压、间隙距离和气压间关系的定律。帕邢定律的公式为
+\beq
+V_S = \frac{BPd}{\ln\left(\frac{APd}{\ln(1+1/\gamma)}\right)}
+\eeq
+上式中$A,B$在一定范围内是常数。$\gamma$为离子撞击阴极时所发生的电子发射的过程系数。帕邢定律在一定 $Pd$ 范围有效。气压过高或过高真空中,帕邢定律不适用。
 
-四极质谱仪:四极杆上加有直流和射频交流分量电压(势),使得一定质量电荷比的离子可稳定的通过四极杆质量过滤器(离子能够稳定地通过四极电场),而不会撞上或逸出四极杆,可将离子根据质量电荷比进行过滤分类,归纳成质谱。
+帕邢曲线是根据帕邢定律的函数表达式所绘制的曲线,表达的物理意义为:击穿电压$U$是电极距离 $d$ 和气压 $P$ 乘积的函数。帕邢曲线的主要特点是:曲线在特定的 $Pd$ 值时,有最小的击穿电压。
+\subsection{四极质谱仪}
+四极杆上加有直流和射频交流分量电压(势),使得一定质量电荷比的离子可稳定的通过四极杆质量过滤器(离子能够稳定地通过四极电场),而不会撞上或逸出四极杆,可将离子根据质量电荷比进行过滤分类,归纳成质谱。
 \newpage
 \section{实验步骤与记录}
-\begin{tabular}{|p{9em}|p{9em}|p{9em}|p{9em}|}
+\begin{tabular}{|p{8em}|p{8em}|p{8em}|p{8em}|}
 	\hline 
 	专业：     &Physics       &年级：      & 17     \\
 	\hline
@@ -113,7 +126,7 @@
 \subsection{实验中遇到的问题记录}
 \newpage
 \section{分析与讨论}
-\begin{tabular}{|p{9em}|p{9em}|p{9em}|p{9em}|}
+\begin{tabular}{|p{8em}|p{8em}|p{8em}|p{8em}|}
 	\hline 
 	专业：     &Physics       &年级：      & 17     \\
 	\hline
@@ -124,6 +137,133 @@
 	评分 & & 教师签名 & \\
 	\hline
 \end{tabular}
-\subsection{实验后思考题}
+\subsection{四极质谱仪原理的深入研究}
 
+\par 本节深入探讨四极质谱仪的工作原理。
+\subsubsection{Mathieu 方程}
+\par 根据提供的参考资料\cite{ref4}，我们知道离子在四极质谱仪中的四极场中运动，它的$x$方向(垂直于离子的入射方向)的运动方程为
+\beq
+\frac{d^2x}{dt^2}+\left(\frac{2eU}{mr_0^2}+\frac{2eV\cos\Omega t}{mr_0^2}\right)x=0
+\eeq
+如果作替换
+\bea
+\lambda &=& \frac{2eU}{mr_0^2} \\
+q &=& -\frac{eV\cos\Omega t}{mr_0^2} 
+\eea
+则我们得到标准的Mathieu方程
+\beq \label{eq:ma}
+\frac{d^2y}{dz^2}+(\lambda-2q\cos 2z)y = 0.
+\eeq
+\subsubsection{基本解的概念}
+在我们处理Mathieu方程之前，我们先考虑更为一般的方程
+\beq \label{eq:general}
+\frac{d^2y}{dz^2}+(\lambda-\phi(z))y = 0
+\eeq
+其中$\phi(z)$是周期为$\omega$的函数。
+
+假设$f(z)$和$g(z)$是满足方程~\ref{eq:general}的解，且分别满足下列初值条件
+\bea \label{eq:condition}
+f(0) = 1, &f^{\prime}(0)=0, \\
+g(0) = 0, &g^{\prime}(0) = 1 
+\eea
+因为这两个解均满足微分方程和上面的条件，故很容易得到等式
+\beq
+f(z)g^{\prime}(z) - f^{\prime}(z)g(z) = \rm{const} = 1
+\eeq
+因此，$f(z), g(z)$是两个线性无关的解，我们称作\textbf{基本解}。由于$\phi(z)$是周期为$\omega$的周期函数，所以$f(z\pm \omega)$和$g(z \pm \omega)$也是方程~\ref{eq:general}的解。又根据微分方程理论，一个二阶微分方程至多有两个线性无关的解，所以微分方程的任何一个解都可以表示成基本解的线性组合，于是有
+\beq
+f(z\pm \omega) = A_{\pm} f(z) + B_{\pm} g(z)
+\eeq
+可以利用条件~\ref{eq:condition}定出上面式子的系数。
+\beq\label{eq:4}
+f(z\pm \omega) = f(\pm \omega) f(z) + f^{\prime}(\pm \omega) g(z)
+\eeq
+这里值得注意的是，如果微分方程的某个系数具有周期性，那么不能保证它的解也具有同样的周期性。类似地，对于$g(z)$有
+\beq\label{eq:5}
+g(z\pm \omega) = g(\pm \omega) f(z) + g^{\prime}(\pm \omega) g(z)
+\eeq
+如果我们进一步假定$\phi(z)$是偶函数(在Mathieu方程中情况确实是这样的)，则显然根据对称性，$f(-z), g(-z)$也是方程~\ref{eq:general}的解。利用方程~\ref{eq:condition}，得到
+\bea 
+f(-z) &=& f(z)\\
+g(-z) &=& -g(z)
+\eea
+于是我们得到结论，当$\phi(z)$为偶函数时，由条件~\ref{eq:condition}所得到的基本解$f(z), g(z)$,前者是偶函数，后者是奇函数。因此，方程~\ref{eq:general}不能同时拥有两个线性无关的偶函数解或者两个线性无关的奇函数解。在上述条件成立的情况下，方程~\ref{eq:4}和方程~\ref{eq:5}应该改写为
+\beq\label{eq:8}
+f(z\pm \omega) = f( \omega) f(z) \pm f^{\prime}( \omega) g(z)
+\eeq
+\beq\label{eq:9}
+g(z\pm \omega) =\pm g( \omega) f(z) + g^{\prime}( \omega) g(z)
+\eeq
+取~\ref{eq:8}和~\ref{eq:9}的负号，利用条件~\ref{eq:condition}并假设$g(\omega)\neq0$,我们得到一个十分重要的结果
+\beq\label{eq:im}
+f(\omega) = g^{\prime}(\omega)
+\eeq
+\subsubsection{方程的Floquet解}
+
+\par 系数$\phi(z)$是周期函数的方程
+\beq 
+\frac{d^2y}{dz^2}+(\lambda-\phi(z))y = 0
+\eeq
+的解$\phi(z)$如果具有如下性质
+\beq
+y(z+\omega) = \sigma y(z)
+\eeq
+其中$\sigma$是与$z$无关的常数，$\omega$是函数$\phi(z)$的周期，则$y(z)$称为Floquet解。取$z=0$有
+\beq
+y(\omega) = \sigma y(0), \, y^{\prime} = \sigma y^{\prime}(0)
+\eeq
+现在我们看一下什么条件下，Floquet解存在。假设
+\beq
+y(z) = Af(z) + Bg(z)
+\eeq
+则得到
+\bea
+    [f(\omega)-\sigma]A +g(\omega) B &=& 0\\
+    f^{\prime}(\omega) A + [g^{\prime}(\omega)-\sigma]B &=& 0
+\eea
+这是一个关于$A,B$的齐次方程，如果他们有非平凡解，则要求系数行列式为0。如果重写系数$\sigma = \exp(i\nu \omega)$,则有
+\beq
+\cos \nu \omega = \frac{1}{2}\left[f(\omega)+g^{\prime}(\omega)\right]
+\eeq
+利用式子~\ref{eq:im}，则有
+\beq\label{eq:important}
+\cos\nu\omega = f(\omega)
+\eeq
+方程的Floquet解总能写成下面的形式
+\beq
+y(z) = \exp(i\nu \omega)u(z)
+\eeq
+其中$u(z)$是周期为$\omega$的周期函数，证明略。
+\subsubsection{Floquet解与量子力学中的Bloch定理}
+\par 写到这里，我不禁联想到量子力学中固体中的价带结构(Band Structure)。我发现，如果不看一些系数，上面讨论的一般情况的方程~\ref{eq:general}恰好是一个含有周期势场的薛定谔方程！这时薛定谔方程的解满足著名的Bloch定理
+\beq
+\psi(z+a) = e^{iKa}\psi(a)
+\eeq
+这完全是对上面讨论的Floquet解的对应。因此，处理上面的方程实际上还可以直接使用量子力学的办法。即定义位移算符
+\beq
+Df(x) = f(x+a)
+\eeq
+通过直接的证明可以得到，位移算符与哈密顿算符对易，故可以取一个波函数$\psi$，使得它同时是位移算符和哈密顿算符的本征函数
+\beq
+D\psi = e^{iKa} \psi(x) = \psi(x+a)
+\eeq
+这样，就用量子力学的语言印证了上面的讨论。进一步地，如果保证这个方程有稳定解，则会导致有价带结构(Band Structure)的出现。也就意味着，能量必须间隔一段\textbf{空穴}。在这个问题中，能量的取值取决于参数$\lambda,q$，可以断言，由于势能场是周期的，则一定会存在类似的空穴。四极质谱仪正是利用这个特性来筛选掉参数处在这些空穴的离子。下面我将具体地给出稳定解的条件。
+
+\subsubsection{Mathieu方程的周期解}
+\par 数学家已经证明(由于在这里叙述篇幅过长，故略去),对于Matheiu方程~\ref{eq:ma}中的参数$\lambda,q$,当他们满足一定条件时，该方程有周期为$\pi$或者$2\pi$的周期解，利用周期性和式~\ref{eq:important}
+\beq
+\cos\nu \pi = f(\pi;\lambda,q)
+\eeq
+显然，稳定解存在的条件是
+\beq
+|f(\pi;\lambda,q)|<1
+\eeq
+否则，$nu$将取虚数，也就意味着Floquet解发散。进一步地分析得到，函数$f(z)$实际上是Mathieu函数$ce_m(z)$，于是通过计算机就可以解出上述方程参数$\lambda,q$的取值范围。要获取更多关于Mathieu函数的性质，读者可以查看~\cite{ma_func}~\cite{special_func}。至此，我们没有具体地讨论复杂的Mathieu函数的性质，而理解了四极质谱仪的工作原理。
+
+
+
+
+\subsection{实验后思考题}
+\bibliographystyle{siam}
+\bibliography{cites}
 \end{document}
