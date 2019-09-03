@@ -17,4 +17,4 @@
 \contentsline {subsubsection}{\numberline {3.1.3}方程的Floquet解}{6}{subsubsection.3.1.3}
 \contentsline {subsubsection}{\numberline {3.1.4}Floquet解与量子力学中的Bloch定理}{7}{subsubsection.3.1.4}
 \contentsline {subsubsection}{\numberline {3.1.5}Mathieu方程的周期解}{7}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}实验后思考题}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}实验后思考题}{7}{subsection.3.2}
