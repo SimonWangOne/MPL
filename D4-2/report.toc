@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}实验原理与方案}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}实验目的}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}仪器用具}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}实验安全注意事项}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}实验原理}{4}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}核磁共振的量子描述}{4}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}核磁共振的宏观描述}{7}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}检测方法}{9}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}横向弛豫时间的观测}{11}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}装置介绍}{13}{subsubsection.1.4.5}
+\contentsline {subsubsection}{\numberline {1.4.6}实验前思考题}{13}{subsubsection.1.4.6}
+\contentsline {section}{\numberline {2}实验步骤与记录}{17}{section.2}
+\contentsline {subsection}{\numberline {2.1}实验内容}{17}{subsection.2.1}
+\contentsline {section}{\numberline {3}分析与讨论}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}实验后思考题}{18}{subsection.3.1}
