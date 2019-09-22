@@ -1,6 +1,6 @@
 \documentclass{ctexart}
 \input{macros.tex}
-
+\graphicspath{picture/}
 %\cpic{<尺寸>}{<文件名>}}用于生成居中的图片。
 \newcommand{\cpic}[2]{
 \begin{center}
@@ -487,10 +487,173 @@ g_{\rm neutron}&\simeq& -3.83
 	\hline	
 	学生签名： & & 评分： & \\
 	\hline
-	日期： & 2019.9.9 & 教师签名：&  \\
+	日期： & 2019.9 & 教师签名：&  \\
 	\hline
 \end{tabular}
-\subsection{实验内容}
+	\subsection{实验步骤与结果}
+	\subsubsection{观察水和聚四氟乙烯样品的核磁共振信号，分别测定水和聚四氟乙烯中氢核、氟核的旋磁比}
+	\begin{enumerate}[(1)]
+		\item 按要求连接导线，详细见附录三说明。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.7]{1}
+		\end{figure}
+		\item 探测单元通过拖板移入磁场中心，旋开高斯计探头的保护套，探头固定在电磁铁顶部的支架上，把探头置于磁场中，调节探头与磁场方向垂直。
+		\item 打开可调直流电源，调节电源输出从0~3A，记录高斯计磁场读数于\ref{表1}，拟合得到电流-磁场关系。
+		\item 取下高斯计，小心地将掺有硫酸铜的水样品放入探测线圈中，并轻轻地推动导轨上的拖
+		板，使探测线圈和样品大致置于磁场的中心。
+		\item 打开核磁共振试验仪和示波器设备电源开关。设置示波器为CH1通道，电压增益为50或
+		100mV，时间增益为2ms。
+		\item 调节可调直流电源输出到最左边，即输出为0A。
+		\item 调节核磁共振实验仪的扫场幅度调节旋钮到较大幅度（一般为总输出的1/4-1/2，即转
+		小半圈左右）。
+		\item 调节探测器单元的幅度调节旋钮“AMPLITUDE”到最右边（即顺时针旋到底）。
+		\item 调节探测器单元的频率调节旋钮到较小的幅度（即逆时针旋到底后，顺时针旋2圈左右）。
+		\item 慢慢地调节直流电源的旋钮，增加电磁铁线圈的电流，加大磁场强度，直到在示波器上
+		看到NMR信号，若信号太大或太小，可以调节示波器电压增益旋钮。
+		\item 慢慢的调节扫场电源幅度调节旋钮，使共振信号最大（若信号移位或者消失，可以微调
+		励磁电流旋钮便可使其出现）。
+		\item )慢慢的移动拖板和升降调节架，即改变样品在磁场中的位置，找到共振信号最大最强的
+		位置即可（若信号移位或者消失，可以微调励磁电流旋钮便可使其出现）
+		\item 调节频率旋钮或者改变励磁电流大小，使共振信号均匀分布（几个信号在示波器x轴上
+		等间距）在示波器的显示屏上。
+		\item 找到水样品最佳氢核共振信号后，读出核磁共振实验仪表上频率计的显示频率υ，用高 斯计测量磁场的最大值B0，把他们记录在\ref{表2}中。
+		\item 通过增加频率υ，重复上述步骤，测量多组数据，计算得到氢核旋磁比。
+		\item 更换聚四氟乙烯样品，重复上述步骤（4）-（15），测量多组数据记录在\ref{表3}，计算得
+		到氟核的旋磁比。
+	\end{enumerate}
+
+	
+	\begin{table}[H]
+		\caption{测量励磁电流-磁场关系曲线}\label{表1}
+		\centering
+		\begin{tabular}{| c | p{4cm} | p{4cm} |}
+		\hline
+		 & I(A) & $B_0(mT)$ \\
+		\hline
+		1 &  &   \\
+		\hline
+		2 &  &   \\
+		\hline
+		3 &  &   \\
+		\hline
+		4 &  &   \\
+		\hline
+		5 &  &   \\
+		\hline
+		6 &  &   \\
+		\hline
+	\end{tabular}
+\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{测量水样品中氢核旋磁比}
+		\label{表2}
+	\begin{tabular}{| c | p{4cm} | p{4cm} |}
+		\hline
+		& $\upsilon(MHz)$ & $B_0(mT)$ \\
+		\hline
+		1 &  &   \\
+		\hline
+		2 &  &   \\
+		\hline
+		3 &  &   \\
+		\hline
+		4 &  &   \\
+		\hline
+		5 &  &   \\
+		\hline
+		6 &  &   \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{测量聚四氟乙烯样品中氟核旋磁比}\label{表3}
+		\begin{tabular}{| c | p{4cm} | p{4cm} |}
+		\hline
+		& $\upsilon(MHz)$ & $B_0(mT)$ \\
+		\hline
+		1 &  &   \\
+		\hline
+		2 &  &   \\
+		\hline
+		3 &  &   \\
+		\hline
+		4 &  &   \\
+		\hline
+		5 &  &   \\
+		\hline
+		6 &  &   \\
+		\hline
+	\end{tabular}
+\end{table}
+	
+	\subsubsection{基于已知氢核旋磁比参数，利用核磁共振法精确测量稳恒磁场和扫描磁场大小，并进一步测定磁铁的磁滞回线}
+	提示：利用水样品，通过观察氢核的振信号并测量与稳恒磁场强度$B_0$,相对应的共振频率$\upsilon$,利用公式（25）标定磁场强度$B_0$,已知氢核旋磁比$\frac{\gamma}{2\pi}=42.576375 MHz/T$.由于核磁共振实验仪自带频率测量精度（~0.01MHz）不够,可以将射频场信号接入示波器，并通过 USB 接口数据导出，做傅里叶变换得到更高精度频率。同时为了精确测量温恒磁场的大小，逐渐减小扫场幅度$B_m'$至共振信号依然存在，同时调节频率旋钮使共振信号以 10ms 和 20ms 均匀排列，得到共振频率$\upsilon_0=\gamma B_0/2\pi$, $\upsilon_1=\gamma (B_0-B_m')/2\pi$, $\upsilon_2=\gamma (B_0+B_m')/2\pi$.最后
+	求得稳恒磁场大小$B_0=(2\upsilon_0+\upsilon_1+\upsilon_2)/(2\gamma /\pi)$和扫描磁场大小$B_m'=\left|\upsilon_1-\upsilon_2\right|/(\gamma/\pi)$将核磁共振法测的$B_0$和高斯计测量结果进行比较.
+	
+	利用上述精密测量磁场的方法，从小到大，再从大到小改变励磁电流，测出磁体的磁滞回线，作图，并解释同一电流值前后两次测量磁场大小不同的原因。
+	\begin{table}[H]
+		\centering
+		\caption{表4：磁滞回线测量}\label{表4}
+		\begin{tabular}{| c | p{4cm} | p{4cm} |}
+			\hline
+			& $I(mA)$ & $B_0(mT)$ \\
+			\hline
+			1 &  &   \\
+			\hline
+			2 &  &   \\
+			\hline
+			3 &  &   \\
+			\hline
+			4 &  &   \\
+			\hline
+			5 &  &   \\
+			\hline
+			6 &  &   \\
+			\hline
+			7 &  &   \\
+			\hline
+			8 &  &   \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	
+	\subsubsection{估测固态聚四氟乙烯样品中氟核的驰豫时间}
+	提示：示波器改用X-Y输入方式，把“扫场输出”的信号（它与扫场线圈两端并联，电
+	压大小相同）输入到X端，“检波输出”信号输入到Y端。调节扫场幅度和共振频率，从示波
+	器上观察到的将是重叠而又相互错开了的两个共振峰，如\ref{图11}。利用示波器上的网格估测其
+	中一个共振峰的半宽度$\delta B$ 与扫场范围 2B'的比值。然后固定扫场的幅度不变，把示波器改
+	回正常的接法，利用实验内容2中方法，求出这时扫场的的峰-峰值2B'，进而求出氟核共振
+	峰的半宽度$\delta B$,利用公式$$1/T_2=\pi\delta B(\gamma/2\pi)_F$$估算出固态聚四氟乙烯中氟核的驰豫时间。为了更加精确，可以将数据用USB导出，通过洛伦兹线型加上干扰背景信号进行拟合。背景信号可用三阶多项式模拟。
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=2]{11}
+		\caption{图11 X-Y扫描模式测横向弛豫时间}\label{图11}
+	\end{figure}
+	
+	
+	\subsubsection{观察顺磁离子浓度对弛豫时间影响，区分不同水样品（选做）}
+	提示：在相同的实验条件下，且满足快通过条件（扫描振幅旋转至>1/2 处），用掺有不
+	同浓度顺磁离子的水作样品，观察共振峰的宽度和幅度变化，并利用尾波法估测表观横向弛豫时间，说明顺磁离子浓度对弛豫时间的影响，从而对两管不同水样品进行识别。
+	
+	尾波法估测表观横向弛豫时间$T_2$：调出不同水样品的氢核共振吸收信号，从示波器中直接读出尾波包络降的数据，如图\ref{图12}所示，利用e指数衰减公式拟合出$T_2$，或者利用示波器USB接口导出尾波信号数据，通过公式数据拟合方式得到$T_2$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=2]{12}
+		\caption{图12 尾波包络降测$T_2$}\label{图12}
+	\end{figure}
+	
+	\subsection{实验过程遇到问题记录}
+	
+	\subsection{附录：实验数据}
+
+
+
 
 \newpage
 \section{分析与讨论}
