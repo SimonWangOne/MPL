@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-Cu_data = "H2O.csv"
-
+Cu_data = "H2O.csv" #H2O.csv, cu_tail.csv
+C = 0.05
 t_factor = 50E-3
 t = []
 y = []
@@ -28,11 +28,10 @@ plt.title('Exponential decrease of pure water',fontsize = 'large', fontweight = 
 
 peak_value = []
 for i in peak_point:
-    peak_value.append(np.log(y[i]))
-
+    peak_value.append(np.log(y[i]-C))
 for i in range(0,len(peak_point)):
-    peak_point[i] = t_factor*peak_point[i]   
-
+    peak_point[i] = t_factor*peak_point[i]
+    
 k = np.polyfit(peak_point,peak_value,1)#k[0] is the slope, k[1] is C
 
 print(len(peak_point))

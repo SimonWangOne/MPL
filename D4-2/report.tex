@@ -1,5 +1,6 @@
 \documentclass{ctexart}
 \input{macros.tex}
+\usepackage{listings}
 \graphicspath{{plot/}}
 %\cpic{<尺寸>}{<文件名>}}用于生成居中的图片。
 \newcommand{\cpic}[2]{
@@ -18,7 +19,7 @@
 }
 \newcommand{\cpicn}[3]
 {
-\begin{figure}
+\begin{figure}[H]
 \cpic{#1}{#2}
 \caption{#3\label{#2}}
 \end{figure}
@@ -668,12 +669,510 @@ g_{\rm neutron}&\simeq& -3.83
 	评分 & & 教师签名 & \\
 	\hline
 \end{tabular}
+\subsection{基于氢核磁旋比参数，测定样品的磁滞回线}
+\subsubsection{傅里叶变换原理}
+傅里叶变换即将一个函数分解为振动模式的叠加，即
+\beq
+f(x) = \int c(k)e^{ikx} dk
+\eeq
+利用$e^{ikx}$的性质，有
+\beq
+\int_{-\infty}^{+\infty} e^{i(k-k^{\prime})x} dx = 2\pi \delta_{kk^{\prime}}
+\eeq
+最终我们得到傅里叶变换的表达式
+\beq
+c(k) = \int \frac{1}{2\pi} f(x)e^{-ikx}dx
+\eeq
+但是上面是对于连续函数$f(x)$而言的，如果$f(x)$不是连续函数而是离散函数，比如我们示波器中导出的信号，那么得到的频谱$c(k)$是有限，离散的函数，即此时，$f_i$为
+\beq
+f_i = \int_0^{L} c(k) e^{ikx} dk
+\eeq
+同样使用上面的方法可以得到离散傅里叶变换的表达式。
+在不同的电流下，我们通过将信号导入示波器中，再将数据从示波器中导出来，进行傅里叶变换。
+\newpage
+\subsubsection{改变不同电流，调节共振信号间距为$10$ms,$20$ms得到的傅里叶变换图像}
+首先，我们展示得到的傅里叶变换图像。
+\cpicn{0.5}{18_1}{调节电流为1.8安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{18_2}{调节电流为1.8安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{20_1}{调节电流为2.0安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{20_2}{调节电流为2.0安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{22_1}{调节电流为2.2安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{22_2}{调节电流为2.2安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{24_1}{调节电流为2.4安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{24_2}{调节电流为2.4安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{27_1}{调节电流为2.7安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{27_2}{调节电流为2.7安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{24_1b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.4安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{24_2b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.4安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{22_1b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{22_2b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{20_1b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{20_2b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{18_1b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$20$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\cpicn{0.5}{18_2b}{在增大电流到达2.7安培之后，我们开始减小电流，以便于测量样品的磁滞回线。调回电流为2.2安培，共振信号间距为$10$ms时的射频场信号与它的傅里叶变换图像，这里略去了两边的界限而只展示了中间的图像，可以看到图像近似为一个狄拉克$\delta$函数，这是由于信号近似是正弦波的缘故。从图中我们很难直接精确地读出频率的数值，读出频率的数值这一部分工作是交由计算机来完成，我们将在最后展示结果与代码。}
+\subsubsection{计算正弦波的频率}
+从自己编写的程序中，我提取出了每个正弦波的频率。因为正弦波的频率值对应的是傅里叶变换$\delta$函数的中心点，但是经过尝试，如果只是寻找值在某个阈值之上的点，程序无法找到这样的点，于是我改变策略，寻找导数很大的点，具体的算法可以见下面的代码。最终，对于每一个文件(文件的开头两位数字代表电流乘以10)，我都求得了正弦波的频率，最终频率如下(下面的结果也在我的个人github网站~\cite{git_xu}中可以找到，文件名是frequency.txt)
+lstset{language=txt}
+\begin{lstlisting}
+18_1     ,14.01 ,MHz
+18_2     ,13.571052631578947 ,MHz
+20_1     ,13.971586206896552 ,MHz
+20_2     ,13.884903225806452 ,MHz
+22_1     ,13.93759493670886 ,MHz
+22_2     ,13.93546961325967 ,MHz
+24_1     ,13.964318181818182 ,MHz
+24_2     ,13.960223463687152 ,MHz
+27_1     ,13.978192090395481 ,MHz
+27_2     ,13.949892473118279 ,MHz
+24_1b     ,14.01 ,MHz
+24_2b     ,13.535319148936171 ,MHz
+22_1b     ,13.923622047244095 ,MHz
+22_2b     ,13.88228187919463 ,MHz
+20_1b     ,13.98805031446541 ,MHz
+20_2b     ,13.957291666666666 ,MHz
+18_1b     ,13.976931818181818 ,MHz
+18_2b     ,13.981326530612245 ,MHz
+\end{lstlisting}
+\subsubsection{通过频率计算磁感应强度，进而计算磁滞回线}
+首先，我们通过前面通过拟合得到的电流与磁场强度的关系
+\beq
+I = 3.11\times 10^5 \mu_0 H +0.20
+\eeq
+其中$I$的单位是安培，$H$采用SI单位制，$\mu_0$是真空中的磁导率，如果采用SI单位制，那么$mu_0$的数值为
+\beq
+\mu_0 = 4\pi \times 10^{-7}
+\eeq
+如果共振峰出现的间隔为$10$ms，那么此时的频率应该满足
+\beq
+2\pi f_2 = \gamma (B \pm B^{\prime})
+\eeq
+如果共振峰出现的间隔为$20$ms，那么此时的频率应该满足
+\beq
+2\pi f_1 = \gamma B
+\eeq
+将不同电流时的磁场(包括电流增大或者减小)画出图像如图~\ref{MHL_1},~\ref{MHL_2}所示。从图像实际上可以读出磁感应强度的数值，与我们之前固定电流而改变扫场频率得到的结果吻合的非常好。
+\cpicn{0.5}{MHL_1}{稳恒场的磁滞回线。其中蓝线代表不断增大电流时所测得的磁感应强度，红线代表不断减小电流时所测得的磁感应强度。}
+\cpicn{0.5}{MHL_2}{改变电流时总磁感应强度的变化曲线。。其中蓝线代表不断增大电流时所测得的磁感应强度，红线代表不断减小电流时所测得的磁感应强度。}
+
+图~\ref{MPH_1}展示了改变磁场强度时磁感应强度大小的变化，由于第二个数据点明显与其他的数据点变化趋势不符合，所以我认为第二个数据点是环境因素造成的粗大误差。由于从示波器导出数据十分麻烦，又因为实验时间有限，所以我们只能测量五个数据点，得到的磁滞回线也比较粗糙。但是还是可以看出增大磁场强度和减小磁场强度时磁感应强度的显著差别。
+
+这是因为样品中都是有很多磁偶极子(小电流线圈)构成的，在外场作用下，磁偶极子的取向发生偏转，有一些偏转是可逆的，有一些偏转是不可逆的，当减小磁场时，有一些磁偶极子会复原，而另外一些磁偶极子则维持着一部分感应的磁感应强度。这样就可以解释样品的磁滞回线。但是上述只是基于经典图像给出的描述，更准确、更物理的描述需要使用量子力学。
+\subsubsection{计算代码}
+我使用了python计算上述傅里叶变换和求解正弦波的频率，完整的数据与代码可以在我个人的github网站~\cite{git_xu}中找到。首先是进行傅里叶变换并画图的代码：
+\lstset{language=python}
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn
+
+t=[]
+y=[]
+t_factor = 50E-3
+i = -1
+fig = []
+for j in [18,20,22,24,27]:
+    fig.append(0)
+    i = i+1
+    filename = str(j)+'_1.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0])*t_factor)
+            y.append(float(temp[1]))
+        
+    factor = 2.0E4
+    n = len(y) # length of the signal
+    k = np.arange(n)
+    frq = k*factor #
+    YY = np.fft.fft(y) # 未归一化
+    plt.figure(dpi = 150)
+    fig[i], ax = plt.subplots(2, 1)
+    ax[0].plot(t,y)
+    ax[0].set_xlabel('Time(ms)')
+    ax[0].set_ylabel('Signal Amplitude')
+    
+    ax[1].plot(frq,abs(YY),'r') # plotting the spectrum
+    ax[1].set_xlabel('Freq (10MHz)')
+    ax[1].set_ylabel('|Y(freq)|')
+    ax[1].set_xlim(600*factor,800*factor)
+    ax[1].set_ylim(0,1)
+    plt.tight_layout()
+    plt.savefig("plot/"+str(j)+"_1.png")
+    plt.close(fig[i])
+    y = []
+    t = []
+
+##################################################
+#################################################
+for j in [18,20,22,24,27]:
+    fig.append(0)
+    i = i+1
+    filename = str(j)+'_2.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0])*t_factor)
+            y.append(float(temp[1]))
+        
+    factor = 2.0E4
+    n = len(y) # length of the signal
+    k = np.arange(n)
+    frq = k*factor #
+    YY = np.fft.fft(y) # 未归一化
+    plt.figure(dpi = 150)
+    fig[i], ax = plt.subplots(2, 1)
+    ax[0].plot(t,y)
+    ax[0].set_xlabel('Time(ms)')
+    ax[0].set_ylabel('Signal Amplitude')
+    
+    ax[1].plot(frq,abs(YY),'r') # plotting the spectrum
+    ax[1].set_xlabel('Freq (10MHz)')
+    ax[1].set_ylabel('|Y(freq)|')
+    ax[1].set_xlim(600*factor,800*factor)
+    ax[1].set_ylim(0,1)
+    plt.tight_layout()
+    plt.savefig("plot/"+str(j)+"_2.png")
+    plt.close(fig[i])
+    y = []
+    t = []
+
+for j in [18,20,22,24]:
+    fig.append(0)
+    i = i+1
+    filename = str(j)+'_1b.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0])*t_factor)
+            y.append(float(temp[1]))
+        
+    factor = 2.0E4
+    n = len(y) # length of the signal
+    k = np.arange(n)
+    frq = k*factor #
+    YY = np.fft.fft(y) # 未归一化
+    plt.figure(dpi = 150)
+    fig[i], ax = plt.subplots(2, 1)
+    ax[0].plot(t,y)
+    ax[0].set_xlabel('Time(ms)')
+    ax[0].set_ylabel('Signal Amplitude')
+    
+    ax[1].plot(frq,abs(YY),'r') # plotting the spectrum
+    ax[1].set_xlabel('Freq (10MHz)')
+    ax[1].set_ylabel('|Y(freq)|')
+    ax[1].set_xlim(600*factor,800*factor)
+    ax[1].set_ylim(0,1)
+    plt.tight_layout()
+    plt.savefig("plot/"+str(j)+"_1b.png")
+    plt.close(fig[i])
+    y = []
+    t = []
+
+for j in [18,20,22,24]:
+    fig.append(0)
+    i = i+1
+    filename = str(j)+'_2b.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0])*t_factor)
+            y.append(float(temp[1]))
+        
+    factor = 2.0E4
+    n = len(y) # length of the signal
+    k = np.arange(n)
+    frq = k*factor #
+    YY = np.fft.fft(y) # 未归一化
+    plt.figure(dpi = 150)
+    fig[i], ax = plt.subplots(2, 1)
+    ax[0].plot(t,y)
+    ax[0].set_xlabel('Time(ms)')
+    ax[0].set_ylabel('Signal Amplitude')
+    
+    ax[1].plot(frq,abs(YY),'r') # plotting the spectrum
+    ax[1].set_xlabel('Freq (10MHz)')
+    ax[1].set_ylabel('|Y(freq)|')
+    ax[1].set_xlim(600*factor,800*factor)
+    ax[1].set_ylim(0,1)
+    plt.tight_layout()
+    plt.savefig("plot/"+str(j)+"_2b.png")
+    plt.close(fig[i])
+    y = []
+    t = []
+ \end{lstlisting}
+接下来展示的是求解正弦波频率的代码，与傅里叶变换的代码相似
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn
+t=[]
+y=[]
+t_factor = 50E-3
+delta_function_fre = []
+output_file = open('frequency.txt','w')
+
+print("-----------------------------------------------------------------")
+print("Fourier Transformation Delta Function Result, increasing current.")
+print("-----------------------------------------------------------------")
+for j in [18,20,22,24,27]:
+    filename = str(j)+'_1.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0]))
+            y.append(float(temp[1]))
+        
+        factor = 2.0E4
+        n = len(y) # length of the signal
+        k = np.arange(n)
+        frq = k*factor #
+        YY = np.fft.fft(y) # 未归一化
+        i=0
+        sum_1 = 0
+        delta_function_fre = []
+        for i in range(600,800):
+            if abs(YY[i]-YY[i-1]) >= 0.2:
+                delta_function_fre.append(frq[i])
+                sum_1 = sum_1 + frq[i]
+        sum_1 = sum_1/len(delta_function_fre)
+
+        
+        filename = str(j)+'_2.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0]))
+            y.append(float(temp[1]))
+        
+        factor = 2.0E4
+        n = len(y) # length of the signal
+        k = np.arange(n)
+        frq = k*factor #
+        YY = np.fft.fft(y) # 未归一化
+        i=0
+        sum_2 = 0
+        delta_function_fre = []
+        for i in range(600,800):
+            if abs(YY[i]-YY[i-1]) >= 0.2:
+                delta_function_fre.append(frq[i])
+                sum_2 = sum_2 + frq[i]
+        sum_2 = sum_2/len(delta_function_fre)
+        print(str(j)+"_1     ,"+str(sum_1/1.0E6)+" ,MHz",file = output_file)        
+        print(str(j)+"_2     ,"+str(sum_2/1.0E6)+" ,MHz",file = output_file)
+t=[]
+y=[]
+t_factor = 50E-3
+delta_function_fre = []
+print("-----------------------------------------------------------------")
+print("Fourier Transformation Delta Function Result, decreasing current.")
+print("-----------------------------------------------------------------")
+for j in [24,22,20,18]:
+    filename = str(j)+'_1b.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0]))
+            y.append(float(temp[1]))
+        
+        factor = 2.0E4
+        n = len(y) # length of the signal
+        k = np.arange(n)
+        frq = k*factor #
+        YY = np.fft.fft(y) # 未归一化
+        i=0
+        sum_1 = 0
+        delta_function_fre = []
+        for i in range(600,800):
+            if abs(YY[i]-YY[i-1]) >= 0.2:
+                delta_function_fre.append(frq[i])
+                sum_1 = sum_1 + frq[i]
+        sum_1 = sum_1/len(delta_function_fre)
+
+        
+        filename = str(j)+'_2b.csv'
+    with open(filename) as file_object:
+        lines = file_object.readlines()
+        lines.remove(lines[0])
+        lines.remove(lines[0])
+        for line in lines:
+            temp = line.split(',')
+            t.append(float(temp[0]))
+            y.append(float(temp[1]))
+        
+        factor = 2.0E4
+        n = len(y) # length of the signal
+        k = np.arange(n)
+        frq = k*factor #
+        YY = np.fft.fft(y) # 未归一化
+        i=0
+        sum_2 = 0
+        delta_function_fre = []
+        for i in range(600,800):
+            if abs(YY[i]-YY[i-1]) >= 0.2:
+                delta_function_fre.append(frq[i])
+                sum_2 = sum_2 + frq[i]
+        sum_2 = sum_2/len(delta_function_fre)
+        print(str(j)+"_1b     ,"+str(sum_1/1.0E6)+" ,MHz",file = output_file)        
+        print(str(j)+"_2b     ,"+str(sum_2/1.0E6)+" ,MHz",file = output_file)
+
+print("-----------------------------------------------------------------")
+output_file.close()
+\end{lstlisting}
+\subsection{估测固态聚四氟乙烯样品中氟核的弛豫时间}
+\subsubsection{弛豫时间的计算}
+我们将示波器改用X-Y输出模式，把扫场输出的信号输入到X端，检波输出信号接到Y端。调节扫场幅度和共振频率，从示波器观察到重叠又相互错开了的两个共振峰。X-Y模式示波器直接导出的图像如图~\ref{time}所示。
+\cpicn{0.6}{time}{从示波器直接导出的原始数据。}
+从图~\ref{time}我们可以发现，数据线条比较粗糙，这是由于示波器扫场而导致光点运动了很多圈的缘故，我们可以局域地求平均，对于过于相近的数据，直接求平均值，得到如图~\ref{time2}所示的图像。
+\cpicn{0.6}{time2}{经过局域求平均之后得到的X-Y扫描模式的图像。}
+作为一个快速的估计，我使用python代码来找到数据显著变化的区域，并将其与曲线左右两端的极值的差值做比较，进而得到一个共振峰的半宽度与扫场范围的比值$\delta B/2B^{\prime}$，对于另外一个峰值，也做同样的操作，最终得到的比值取平均值，得到我估计的共振峰半宽度与扫场范围的比值(具体运算参见下面的代码)。最终得到比值的结果为
+\beq
+\frac{\delta B}{2B^{\prime}} = 0.02909
+\eeq
+通过与之前实验内容类似的方法计算得到$2B^{\prime} = 97.6 \mathrm{mT}$，进而计算得到
+\beq
+\delta B = 2.84 \mathrm{mT}
+\eeq
+前面的分析与讨论我们得到了氟原子核的磁旋比
+\beq
+\gamma_F = 0.258 \mathrm{MHz/T}
+\eeq
+所以我们得到估算的氟原子核在聚四氟乙烯样品中的弛豫时间
+\beq
+T_2 \simeq 1.36 \mathrm{ms}
+\eeq
+\subsubsection{计算代码}
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+
+CH1 = []
+CH2 = []
+t_factor = 50E-3
+input_file = "time.csv"
+
+with open(input_file) as file_obj:
+    lines = file_obj.readlines()
+    lines.remove(lines[0])
+    lines.remove(lines[0])
+    for line in lines:
+        temp = line.split(',')
+        CH1.append(float(temp[1].strip()))
+        CH2.append(float(temp[2].strip()))
+plt.figure(num=3,figsize=(8,5))
+# Plotting initial figure
+plt.plot(CH1,CH2,color='blue',linewidth=1.0)
+# setting size of image
+plt.xlabel('CH1')
+plt.ylabel('CH2')
+plt.title('Figure in X-Y mode',fontsize='large',fontweight='bold')
+# save fig and close
+plt.savefig("time.png")
+plt.close()
 
 
+#data analysis
+CH_1_new = []
+CH_2_new = []
+average_rate = 2.0 #average nearly 2 points
+j = 0
+for j in range(0,len(CH1),int(average_rate)):
+    CH_1_new.append((CH1[j] + CH1[j+1])/average_rate)
+    CH_2_new.append((CH2[j] + CH2[j+1])/average_rate)
 
+    
+# Plotting initial figure
+plt.plot(CH_1_new,CH_2_new,color='blue',linewidth=1.0)
+# setting size of image
+plt.xlabel('CH1')
+plt.ylabel('CH2')
+plt.title('Figure in X-Y mode',fontsize='large',fontweight='bold')
+# save fig and close
+plt.savefig("time2.png")
+plt.close()
+#finding minimum and maximum and compute their difference
+min = CH_1_new[0]
+max = CH_1_new[0]
+for j in range(0,len(CH_1_new)):
+    if CH_1_new[j] <= min:
+        min = CH_1_new[j]
+    elif CH_1_new[j] >= max:
+        max = CH_1_new[j]
+difference = max - min
+#fiding peak and compute the width
+peak_value = []
+peak_value_1 = []
+peak_value_2 = []
+for j in range(0,len(CH_1_new)-1):
+    if abs(CH_2_new[j+1] - CH_2_new[j]) >= 0.02:
+        peak_value.append(CH_1_new[j])
 
+## Sort two peak
+peak_ref = peak_value[0]
+for j in range(0,len(peak_value)):
+    if abs(peak_value[j] - peak_ref)<=0.5:
+        peak_value_1.append(peak_value[j])
+    else:
+        peak_value_2.append(peak_value[j])
 
-\subsection{实验后思考题}
+## Compute width
+min = peak_value_1[0]
+max = peak_value_1[0]
+for j in range(0,len(peak_value_1)):
+    if peak_value_1[j] <= min:
+        min = peak_value_1[j]
+    elif peak_value_1[j]>= max:
+        max = peak_value_1[j]
+width_1 = max - min
+
+min = peak_value_2[0]
+max = peak_value_2[0]
+for j in range(0,len(peak_value_2)):
+    if peak_value_2[j] <= min:
+        min = peak_value_2[j]
+    elif peak_value_2[j]>= max:
+        max = peak_value_2[j]
+width_2 = max - min
+
+width_average = (width_1+width_2)/2.0
+proportion = width_average/difference
+print("width_average=  "+str(width_average))
+print("proportion = "+str(proportion))
+\end{lstlisting}
+\subsection{(选做)观察顺磁离子浓度对弛豫时间影响，区分不同水样品}
+实验室中只给我们提供了铜离子的样品和纯水的样品。我们只比较这两种。通过示波器导出的图样，我们取最大值点做指数衰减的拟合，对于含有铜离子的样品，得到的图样如图~\ref{cu}所示。
+\cpicn{0.5}{cu}{含有铜离子水样品的尾波}
+通过拟合相关的数据，计算得到弛豫时间为
+\beq
+T_{Cu} = 41.271\mathrm{ms}
+\eeq
+\cpicn{0.5}{water}{纯水样品的尾波}
+对于水样品，得到的图样如图~\ref{water}所示，计算得到弛豫时间为
+\beq
+T_{\rm pure water} = 29.456 \mathrm{ms}
+\eeq
+可见，对于加入了铜离子的样品，弛豫时间明显比纯水大。这说明铜粒子不是一个顺磁离子，它的存在会阻碍外磁场变化，使得弛豫时间变长。
+
 
 
 \bibliographystyle{siam}

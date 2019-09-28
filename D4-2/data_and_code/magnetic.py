@@ -39,6 +39,7 @@ for i in range(0,5):
     frequency_1b[i] = frequency_1b[i]/gamma
     frequency_2b[i] = frequency_2b[i]/gamma
 
+print(frequency_2[1] - frequency_1[1])
 for i in range(0,len(current)):
     current[i] = mu_0*np.sqrt((current[i] - 0.21)/3.11E-5)## relationship between magnetic field intensity and current
 plt.figure(num=3,figsize=(8,5))
