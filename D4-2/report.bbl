@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{aqm}
+{\sc T.~David}, {\em Applications of quantum mechanics}.
+\newblock \url{http://www.damtp.cam.ac.uk/user/tong/aqm.html}.
+
+\bibitem{git_xu}
+{\sc H.~Xu}, {\em Mpl}.
+\newblock \url{http://github.com/HaotingXu/MPL}.
+
+\bibitem{thermal:wang}
+{\sc 汪志诚}, {\em 热力学与统计物理}, 高等教育出版社.
+
+\end{thebibliography}
