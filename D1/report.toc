@@ -1,15 +1,27 @@
-\contentsline {section}{\numberline {1}实验原理与方案}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}实验目的}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}仪器用具}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}实验安全注意事项}{5}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}实验原理}{5}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}噪声的定义及数学描述}{5}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}滤波法}{7}{subsubsection.1.4.2}
-\contentsline {subsubsection}{\numberline {1.4.3}零位法}{9}{subsubsection.1.4.3}
-\contentsline {subsubsection}{\numberline {1.4.4}锁相放大法}{9}{subsubsection.1.4.4}
-\contentsline {subsubsection}{\numberline {1.4.5}工作原理}{11}{subsubsection.1.4.5}
-\contentsline {section}{\numberline {2}实验步骤与记录}{16}{section.2}
-\contentsline {subsection}{\numberline {2.1}实验内容、步骤、结果}{16}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}锁相放大器的基本操作和基本参数}{16}{subsubsection.2.1.1}
-\contentsline {section}{\numberline {3}分析与讨论}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}实验后思考题}{18}{subsection.3.1}
+\contentsline {section}{\numberline {1}实验原理与方案}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}实验目的}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}仪器用具}{6}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}实验安全注意事项}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}实验原理}{6}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}噪声的定义及数学描述}{6}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}滤波法}{8}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}零位法}{10}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}锁相放大法}{10}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}工作原理}{12}{subsubsection.1.4.5}
+\contentsline {subsection}{\numberline {1.5}实验前思考题}{16}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}实验一}{16}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}实验二}{21}{subsubsection.1.5.2}
+\contentsline {section}{\numberline {2}实验步骤与记录}{22}{section.2}
+\contentsline {subsection}{\numberline {2.1}实验内容、步骤、结果}{22}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}锁相放大器的基本操作和基本参数}{22}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}锁相放大器的基本操作和基本参数——工作原理的体验}{22}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}测量信号R、$\theta $、X 以及 Y 值，并验证它们之间的关系}{22}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}不同时间常数、陡降、动态储备下观测滤波器效果}{27}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}制定方案，观测不同时间常数下，输出信号对输入信号变化的响应。}{28}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}强噪声背景下的弱信号检测——应用体验}{29}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}用示波器观察教学实验箱噪声发生器输出的噪声是否白噪声？记录时域和频域的图谱来说明。}{29}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}不同的噪声水平下，考察 OE1022 如何选用合适的动态储备测量信号？}{29}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}比较 OE1022 与示波器对不同信号强度和信噪比的测量结果}{29}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}实验过程中遇到的问题记录}{30}{subsection.2.4}
+\contentsline {section}{\numberline {3}分析与讨论}{31}{section.3}
+\contentsline {subsection}{\numberline {3.1}实验后思考题}{31}{subsection.3.1}
