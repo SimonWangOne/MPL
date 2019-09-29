@@ -1,8 +1,8 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.7.17)  29 SEP 2019 13:08
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.7.17)  29 SEP 2019 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**report
+**report.tex
 (./report.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
@@ -2104,16 +2104,12 @@ Overfull \hbox (22.80437pt too wide) in paragraph at lines 181--181
 File: figure/d19.png Graphic file (type bmp)
 <figure/d19.png>
 [10] [11]
-Overfull \hbox (5.59976pt too wide) detected at line 221
+Overfull \hbox (5.59976pt too wide) detected at line 220
 []\OML/cmm/m/it/10.95 R \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^Y []
  []
 
-[12] [13]
-
-LaTeX Warning: Citation `lec' on page 14 undefined on input line 277.
-
-[14] [15]
-Overfull \hbox (50.41406pt too wide) in paragraph at lines 285--298
+[12] [13] [14] [15]
+Overfull \hbox (50.41406pt too wide) in paragraph at lines 283--296
 [][] 
  []
 
@@ -2125,7 +2121,7 @@ File: figure/d114.png Graphic file (type bmp)
 File: figure/d115.png Graphic file (type bmp)
 <figure/d115.png>
  [17]
-Overfull \hbox (6.61407pt too wide) in paragraph at lines 320--331
+Overfull \hbox (6.61407pt too wide) in paragraph at lines 318--329
 [][] 
  []
 
@@ -2134,24 +2130,24 @@ Overfull \hbox (6.61407pt too wide) in paragraph at lines 320--331
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 ) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 335.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 335.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
  ) 
 Here is how much of TeX's memory you used:
- 43762 strings out of 493007
- 888812 string characters out of 6136719
+ 43761 strings out of 493007
+ 888807 string characters out of 6136719
  916464 words of memory out of 5000000
- 47185 multiletter control sequences out of 15000+600000
+ 47184 multiletter control sequences out of 15000+600000
  572580 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,11n,74p,10426b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,11n,74p,10430b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on report.pdf (18 pages).
